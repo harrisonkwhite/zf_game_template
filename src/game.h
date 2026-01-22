@@ -1,11 +1,10 @@
-#ifndef GAME_H
-#define GAME_H
+#pragma once
 
-#include <zfwc.h>
+#include "pch.h"
 
-bool InitGame(const s_game_init_context* const zfw_context);
-e_game_tick_result GameTick(const s_game_tick_context* const zfw_context);
-bool RenderGame(const s_game_render_context* const zfw_context);
-void CleanGame(void* const dev_mem);
+struct t_game {};
 
-#endif
+void GameInit(const zgl::t_game_init_func_context &zf_context);
+void GameDeinit(const zgl::t_game_deinit_func_context &zf_context);
+void GameTick(const zgl::t_game_tick_func_context &zf_context);
+void GameRender(const zgl::t_game_render_func_context &zf_context);
